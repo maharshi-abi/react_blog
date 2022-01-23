@@ -19,6 +19,16 @@ export default function BlogIndex() {
         <Box gridColumn="span 3">
           <BlogGrid />
         </Box>
+        <Box gridColumn="span 3">
+          <BlogGrid />
+        </Box>
+        <Box gridColumn="span 3">
+          <BlogGrid />
+        </Box>
+        <Box gridColumn="span 3">
+          <BlogGrid />
+        </Box>
+        
       </Box>
       {/* Blog detail page */}
     </React.Fragment>

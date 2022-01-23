@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Container from '@mui/material/Container';
 import Navbar from "../Front/Comman/Header";
 import BlogPage from "../Front/Blog/Index";
+import ErrorPage from "../Front/Comman/ErrorPage";
 
 function App() {
     return (
@@ -12,6 +13,10 @@ function App() {
                 <Routes>
                     <Route path="/" element={<BlogPage />} exact />
                     <Route path="/blog" element={<BlogPage />} exact />
+                    <Route path="*" element={<ErrorPage/>} />
+                    <Route path="" element={<ErrorPage/>} />
+                    <Route path="*" element={<ErrorPage/>} />
+                    <Route element={<ErrorPage/>} />
                 </Routes>
             </Container>
         </BrowserRouter>
