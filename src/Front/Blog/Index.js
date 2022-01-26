@@ -6,31 +6,18 @@ import BlogGrid from './List/Index';
 export default function BlogIndex() {
   return (
     <React.Fragment>
-
+      {/* slider section */}
       <Slider />
-      {/* Blog detail page */}
+      {/* slider section */}
+
       <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
+        {/* Blog detail page */}
         <Box gridColumn="span 3">
           <BlogGrid />
         </Box>
-        <Box gridColumn="span 3">
-          <BlogGrid />
-        </Box>
-        <Box gridColumn="span 3">
-          <BlogGrid />
-        </Box>
-        <Box gridColumn="span 3">
-          <BlogGrid />
-        </Box>
-        <Box gridColumn="span 3">
-          <BlogGrid />
-        </Box>
-        <Box gridColumn="span 3">
-          <BlogGrid />
-        </Box>
-        
-      </Box>
-      {/* Blog detail page */}
+        {/* Blog detail page */}
+      </Box>      
+      
     </React.Fragment>
   );
 }

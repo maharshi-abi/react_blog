@@ -11,11 +11,19 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from "react-router-dom";
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// menu name, link
+var MenuList = [
+  ["Home", '/'],
+  ["Contact Us", '/contact'],
+  ["Module Communication", '/modules'],  
+];
 
-const ResponsiveAppBar = () => {
+const pages = MenuList;
+const settings = ['Profile', 'Dashboard', 'Logout'];
+
+const HeaderSection = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -42,9 +50,8 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            Achieve Beyond Imagination
+            sx={{ flexGrow: 10, display: { xs: 'flex', md: 'flex' } }}
+          >Achieve Beyond Imagination
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -83,23 +90,17 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            LOGO
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <Link to={page[1]} key={page}>
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
+              >                
+                  {page[0]}                
               </Button>
+              </Link>
             ))}
           </Box>
 
@@ -137,4 +138,4 @@ const ResponsiveAppBar = () => {
     </AppBar>
   );
 };
-export default ResponsiveAppBar;
+export default HeaderSection;
